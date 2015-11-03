@@ -4,7 +4,7 @@
 	<name>AJAX Tabs</name>
 	<id>ui_tabs</id>
 
-	<description>Enhanced registration form</description>
+	<description>AJAXifies content layout tabs and provides views for rendering tabbed modules</description>
 	<category>ui</category>
 	<version type="dist">0.0.0</version>
 
