@@ -5,7 +5,7 @@
 	<id>ui_tabs</id>
 
 	<description>Enhanced registration form</description>
-	<category>forms</category>
+	<category>ui</category>
 	<version type="dist">0.0.0</version>
 
 	<author>Ismayil Khayredinov (inof@hypejunction.com)</author>
