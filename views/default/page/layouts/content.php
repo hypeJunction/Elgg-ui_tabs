@@ -15,7 +15,7 @@
  * @uses $vars['class']          Additional class to apply to layout
  */
 
-$context = elgg_extract('context', $vars, elgg_get_context());
+$context = elgg_extract('context', $vars);
 
 $vars['title'] = elgg_extract('title', $vars, '');
 if (!$vars['title'] && $vars['title'] !== false) {
