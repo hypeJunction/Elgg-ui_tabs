@@ -13,6 +13,7 @@
  * @uses $vars['context']        Page context (override)
  * @uses $vars['filter_context'] Filter context: everyone, friends, mine
  * @uses $vars['class']          Additional class to apply to layout
+ * @uses $vars['ajax_tabs']      Use ajax to load tab content
  */
 
 $context = elgg_extract('context', $vars);
@@ -28,6 +29,7 @@ if ($filter) {
 	$vars['content'] = elgg_view_layout('tabs', [
 		'id' => $context ? "elgg-page-$context-nav" : "elgg-page-layout-nav",
 		'tabs' => $filter,
+		'ajax_tabs' => elgg_extract('ajax_tabs', $vars, elgg_get_plugin_setting('ajax_page_tabs', 'ui_tabs', true)),
 		'content' => elgg_format_element('div', [
 			'class' => 'elgg-content',
 			'data-title' => $vars['title'],

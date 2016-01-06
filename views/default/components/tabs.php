@@ -18,8 +18,9 @@ $class = (array) elgg_extract('class', $vars, []);
 $class[] = 'elgg-tabs-container';
 $vars['class'] = $class;
 
+$ajax_tabs = elgg_extract('ajax_tabs', $vars, true);
 $tabs = elgg_format_element('div', [
-	'class' => 'elgg-tabs-nav',
+	'class' => $ajax_tabs ? 'elgg-tabs-nav' : false,
 		], elgg_extract('tabs', $vars, ''));
 unset($vars['tabs']);
 
