@@ -6,6 +6,7 @@ robots.txt
 /.sass-cache/
 /node_modules/
 /build/
+/mod/
 /releases/
 /vendor/
 composer.lock
