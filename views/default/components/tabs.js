@@ -91,7 +91,7 @@ define(function (require) {
 				if ($target.data('url')) {
 					var tabData = $target.data();
 					tabData.activeTabSelector = '#' + $link.attr('id');
-					if (window.history.state.activeTabSelector !== tabData.activeTabSelector) {
+					if (typeof window.history.state.activeTabSelector !== 'undefined' && window.history.state.activeTabSelector !== tabData.activeTabSelector) {
 						window.history.pushState(tabData, $target.data('title'), $target.data('url'));
 					}
 				}
@@ -104,7 +104,7 @@ define(function (require) {
 	});
 
 	$(window).on('popstate', function (event) {
-		if (event.originalEvent.state.activeTabSelector) {
+		if (event.originalEvent && event.originalEvent.state && event.originalEvent.state.activeTabSelector) {
 			$(event.originalEvent.state.activeTabSelector).trigger('click');
 		}
 	});
