@@ -18,6 +18,10 @@ define(function (require) {
 
 	$(document).on('click', '.elgg-tabs-nav a', function (e) {
 
+		if (e.isDefaultPrevented()) {
+			return;
+		}
+		
 		var $link = $(this);
 		var $tab = $(this).closest('li');
 		var $container = $(this).closest('.elgg-tabs-container');
