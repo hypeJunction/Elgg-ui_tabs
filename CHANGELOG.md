@@ -1,3 +1,13 @@
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/hypeJunction/Elgg-ui_tabs/compare/1.1.2...v1.1.3) (2016-01-22)
+
+
+### Bug Fixes
+
+* **js:** check if default is prevented before running scripts ([2e371e1](https://github.com/hypeJunction/Elgg-ui_tabs/commit/2e371e1))
+
+
+
 <a name="1.1.2"></a>
 ## 1.1.2 (2016-01-21)
 
