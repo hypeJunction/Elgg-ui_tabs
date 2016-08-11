@@ -26,7 +26,7 @@ define(function (require) {
 		var $tab = $(this).closest('li');
 		var $container = $(this).closest('.elgg-tabs-container');
 		var id = $container.attr('id');
-		var $content = $container.find('.elgg-tabs-content');
+		var $content = $container.find('.elgg-tabs-content').eq(0);
 		var $target;
 
 		$tab.siblings().find('a').uniqueId();
