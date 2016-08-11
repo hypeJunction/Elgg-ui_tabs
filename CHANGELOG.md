@@ -1,3 +1,13 @@
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/hypeJunction/Elgg-ui_tabs/compare/1.1.3...v1.1.4) (2016-08-11)
+
+
+### Bug Fixes
+
+* **js:** use the first descendant of type to avoid problems with nested tabbed layouts ([ee9bc1e](https://github.com/hypeJunction/Elgg-ui_tabs/commit/ee9bc1e))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/hypeJunction/Elgg-ui_tabs/compare/1.1.2...v1.1.3) (2016-01-22)
 
