@@ -39,4 +39,4 @@ if ($filter) {
 	]);
 }
 
-echo elgg_view_layout('one_sidebar', $vars);
+echo elgg_view_layout('default', $vars);

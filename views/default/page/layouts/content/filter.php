@@ -2,11 +2,6 @@
 
 $context = elgg_extract('context', $vars, elgg_get_context());
 
-// 1.8 supported 'filter_override'
-if (isset($vars['filter_override'])) {
-	$vars['filter'] = $vars['filter_override'];
-}
-
 // register the default content filters
 if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
 	$username = elgg_get_logged_in_user_entity()->username;

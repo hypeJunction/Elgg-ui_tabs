@@ -1,9 +1,11 @@
 define(function (require) {
 
 	var elgg = require('elgg');
+	var Ajax = require('elgg/Ajax');
 	var $ = require('jquery');
 	require('jquery-ui');
 	var spinner = require('elgg/spinner');
+	var ajax = new Ajax();
 
 	$('.elgg-tabs-nav a').uniqueId();
 
@@ -40,14 +42,14 @@ define(function (require) {
 			if ($target.length) {
 				$target.siblings().hide().removeClass('elgg-state-active');
 				$target.show().addClass('elgg-state-active');
-				$tab.siblings().andSelf().removeClass('elgg-state-selected');
+				$tab.siblings().addBack().removeClass('elgg-state-selected');
 				$tab.addClass('elgg-state-selected');
 			}
 			return;
 		}
 
 		e.preventDefault();
-		elgg.ajax(href, {
+		ajax.path(href, {
 			data: $link.data(),
 			beforeSend: spinner.start,
 			complete: spinner.stop,
@@ -100,7 +102,7 @@ define(function (require) {
 					}
 				}
 
-				$tab.siblings().andSelf().removeClass('elgg-state-selected');
+				$tab.siblings().addBack().removeClass('elgg-state-selected');
 				$tab.addClass('elgg-state-selected');
 			}
 		});
