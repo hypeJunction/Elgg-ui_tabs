@@ -38,8 +38,6 @@ if ($module) {
 } else {
 	echo elgg_format_element('div', $vars, $tabs . $content);
 }
-?>
-<script>
-	require(['components/tabs']);
-</script>
+
+elgg_require_js('components/tabs');
 

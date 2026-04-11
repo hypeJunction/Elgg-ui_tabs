@@ -13,8 +13,9 @@
 			"email": "info@hypejunction.com"
 		}
 	],
-	"require-dev": {
-		"composer/installers": "1.*"
+	"require": {
+		"composer/installers": "~1.0",
+		"elgg/elgg": "~4.0"
 	}
 }
 
