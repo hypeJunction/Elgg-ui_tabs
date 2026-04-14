@@ -14,8 +14,14 @@
 		}
 	],
 	"require": {
-		"composer/installers": "~1.0",
-		"elgg/elgg": "~4.0"
+		"php": ">=7.4",
+		"elgg/elgg": "^4.0",
+		"composer/installers": "^2.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }
 
