@@ -15,30 +15,51 @@ class ViewsTest extends IntegrationTestCase {
     public function down() {
     }
 
+    /**
+     * @return string
+     */
     public function getPluginID(): string {
         return 'ui_tabs';
     }
 
+    /**
+     * @return void
+     */
     public function testComponentsTabsViewExists(): void {
         $this->assertTrue(elgg_view_exists('components/tabs'));
     }
 
+    /**
+     * @return void
+     */
     public function testPageLayoutTabsViewExists(): void {
         $this->assertTrue(elgg_view_exists('page/layouts/tabs'));
     }
 
+    /**
+     * @return void
+     */
     public function testPageLayoutContentViewExists(): void {
         $this->assertTrue(elgg_view_exists('page/layouts/content'));
     }
 
+    /**
+     * @return void
+     */
     public function testPageLayoutContentFilterViewExists(): void {
         $this->assertTrue(elgg_view_exists('page/layouts/content/filter'));
     }
 
+    /**
+     * @return void
+     */
     public function testPluginSettingsViewExists(): void {
         $this->assertTrue(elgg_view_exists('plugins/ui_tabs/settings'));
     }
 
+    /**
+     * @return void
+     */
     public function testThemeSandboxViewExists(): void {
         $this->assertTrue(elgg_view_exists('theme_sandbox/components/tabs'));
         $this->assertTrue(elgg_view_exists('theme_sandbox/components/tabs/nav'));
@@ -46,10 +67,16 @@ class ViewsTest extends IntegrationTestCase {
         $this->assertTrue(elgg_view_exists('theme_sandbox/components/tabs/ajax'));
     }
 
+    /**
+     * @return void
+     */
     public function testComponentsTabsJsFileExists(): void {
         $this->assertTrue(elgg_view_exists('components/tabs.js'));
     }
 
+    /**
+     * @return void
+     */
     public function testComponentsTabsRendersContainer(): void {
         $output = elgg_view('components/tabs', [
             'id' => 'test-tabs',
@@ -65,6 +92,9 @@ class ViewsTest extends IntegrationTestCase {
         $this->assertStringContainsString('test-tabs', $output);
     }
 
+    /**
+     * @return void
+     */
     public function testComponentsTabsNonAjaxOmitsNavClass(): void {
         $output = elgg_view('components/tabs', [
             'id' => 'static-tabs',
@@ -75,6 +105,9 @@ class ViewsTest extends IntegrationTestCase {
         $this->assertStringNotContainsString('elgg-tabs-nav', $output);
     }
 
+    /**
+     * @return void
+     */
     public function testComponentsTabsWithModuleWrapping(): void {
         $output = elgg_view('components/tabs', [
             'id' => 'mod-tabs',
@@ -86,6 +119,9 @@ class ViewsTest extends IntegrationTestCase {
         $this->assertStringContainsString('elgg-module-tabbed', $output);
     }
 
+    /**
+     * @return void
+     */
     public function testPageLayoutTabsFallsBackToContentWhenNoTabs(): void {
         $output = elgg_view_layout('tabs', [
             'content' => 'just content',
@@ -94,6 +130,9 @@ class ViewsTest extends IntegrationTestCase {
         $this->assertStringNotContainsString('elgg-tabs-container', $output);
     }
 
+    /**
+     * @return void
+     */
     public function testPageLayoutTabsRendersTabsWhenProvided(): void {
         $output = elgg_view_layout('tabs', [
             'id' => 'pl-tabs',
@@ -104,6 +143,9 @@ class ViewsTest extends IntegrationTestCase {
         $this->assertStringContainsString('Body', $output);
     }
 
+    /**
+     * @return void
+     */
     public function testThemeSandboxTabsRenders(): void {
         $output = elgg_view('theme_sandbox/components/tabs');
         $this->assertIsString($output);
@@ -112,6 +154,9 @@ class ViewsTest extends IntegrationTestCase {
         $this->assertStringContainsString('elgg-tabs-container', $output);
     }
 
+    /**
+     * @return void
+     */
     public function testPluginSettingsViewRenders(): void {
         $plugin = elgg_get_plugin_from_id('ui_tabs');
         if (!$plugin) {

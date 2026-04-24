@@ -3,7 +3,7 @@ define(function (require) {
 	var elgg = require('elgg');
 	var Ajax = require('elgg/Ajax');
 	var $ = require('jquery');
-	require('jquery-ui');
+	require('jquery-ui/unique-id');
 	var spinner = require('elgg/spinner');
 	var ajax = new Ajax();
 

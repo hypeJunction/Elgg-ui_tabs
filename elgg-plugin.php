@@ -11,8 +11,6 @@ return [
 	],
 
 	'view_extensions' => [
-		'theme_sandbox/components' => [
-			'theme_sandbox/components/tabs' => [],
-		],
+		'theme_sandbox/components' => 'theme_sandbox/components/tabs',
 	],
 ];

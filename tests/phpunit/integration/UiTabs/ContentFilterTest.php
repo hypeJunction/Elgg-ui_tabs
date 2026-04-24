@@ -16,13 +16,19 @@ class ContentFilterTest extends IntegrationTestCase {
     public function down() {
     }
 
+    /**
+     * @return string
+     */
     public function getPluginID(): string {
         return 'ui_tabs';
     }
 
+    /**
+     * @return void
+     */
     public function testFilterRegistersMenuItemsWhenLoggedIn(): void {
         $user = $this->createUser();
-        elgg_get_session()->setLoggedInUser($user);
+        _elgg_services()->session_manager->setLoggedInUser($user);
 
         try {
             // Clear any pre-existing registered filter items
@@ -42,12 +48,15 @@ class ContentFilterTest extends IntegrationTestCase {
             // We primarily assert that the view runs without error and the item
             // registration helper was exercised.
         } finally {
-            elgg_get_session()->removeLoggedInUser();
+            _elgg_services()->session_manager->removeLoggedInUser();
         }
     }
 
+    /**
+     * @return void
+     */
     public function testFilterSkipsWhenLoggedOut(): void {
-        elgg_get_session()->removeLoggedInUser();
+        _elgg_services()->session_manager->removeLoggedInUser();
         $output = elgg_view('page/layouts/content/filter', [
             'context' => 'activity',
         ]);

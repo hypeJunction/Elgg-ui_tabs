@@ -15,10 +15,16 @@ class PluginSettingsTest extends IntegrationTestCase {
     public function down() {
     }
 
+    /**
+     * @return string
+     */
     public function getPluginID(): string {
         return 'ui_tabs';
     }
 
+    /**
+     * @return void
+     */
     public function testAjaxPageTabsSettingDefaultsToTrue(): void {
         // Verify that when no setting is stored, the default (true) is used
         // by the code at page/layouts/content.php via elgg_get_plugin_setting(..., true)
@@ -26,6 +32,9 @@ class PluginSettingsTest extends IntegrationTestCase {
         $this->assertNotNull($value);
     }
 
+    /**
+     * @return void
+     */
     public function testAjaxPageTabsSettingPersists(): void {
         $plugin = elgg_get_plugin_from_id('ui_tabs');
         if (!$plugin) {

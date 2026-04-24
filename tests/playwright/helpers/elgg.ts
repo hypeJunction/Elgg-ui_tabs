@@ -9,12 +9,12 @@ const DB_CONFIG = {
   database: process.env.ELGG_DB_NAME || 'elgg',
 };
 
-export async function loginAs(page: Page, username: string, password: string = 'testpass123') {
+export async function loginAs(page: Page, username: string, password: string = 'admin12345') {
   await page.goto('/login');
-  await page.fill('input[name="username"]', username);
-  await page.fill('input[name="password"]', password);
-  await page.click('button[type="submit"]');
-  await page.waitForURL(/\//);
+  await page.fill('.elgg-module-aside input[name="username"]', username);
+  await page.fill('.elgg-module-aside input[name="password"]', password);
+  await page.click('.elgg-module-aside button[type="submit"]');
+  await page.waitForURL(url => !url.toString().includes('/login'), { timeout: 15000 });
 }
 
 export async function queryDb(sql: string, params: any[] = []) {
@@ -26,14 +26,14 @@ export async function queryDb(sql: string, params: any[] = []) {
 
 export async function getPluginSetting(pluginId: string, name: string): Promise<string | null> {
   const rows = await queryDb(
-    `SELECT ps.value
+    `SELECT m.value
        FROM elgg_entities e
-       JOIN elgg_private_settings ps ON ps.entity_guid = e.guid
+       JOIN elgg_metadata m ON m.entity_guid = e.guid
       WHERE e.type = 'object'
         AND e.subtype = 'plugin'
-        AND ps.name = ?
+        AND m.name = ?
         AND e.guid IN (
-          SELECT entity_guid FROM elgg_private_settings
+          SELECT entity_guid FROM elgg_metadata
            WHERE name = 'elgg:internal:title' AND value = ?
         )`,
     [name, pluginId]
