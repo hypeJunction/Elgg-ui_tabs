@@ -1,3 +1,13 @@
+## [Unreleased] — Elgg 5.x migration
+
+### Changed
+- Require `elgg/elgg ^5.0` and `php >=8.2`
+- Replace `page/layouts/content` hook with `page/layouts/elements/body` override
+  for Elgg 5.x default layout (adds `.elgg-layout-tabs` wrapping on filtered pages)
+- Fix `view_extensions` format to flat `view => extension` string (nested array removed)
+- Update `components/tabs.js` AMD require: `jquery-ui` → `jquery-ui/unique-id`
+- PHPUnit tests updated for Elgg 5.x session service API
+
 <a name="1.1.4"></a>
 ## [1.1.4](https://github.com/hypeJunction/Elgg-ui_tabs/compare/1.1.3...v1.1.4) (2016-08-11)
 
