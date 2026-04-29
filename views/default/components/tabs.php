@@ -39,5 +39,5 @@ if ($module) {
 	echo elgg_format_element('div', $vars, $tabs . $content);
 }
 
-elgg_require_js('components/tabs');
+elgg_import_esm('components/tabs');
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Per-plugin Elgg 5.x install + activation script.
+# Per-plugin Elgg 6.x install + activation script.
 # PLUGIN_ID must be set in the container environment (passed by docker-compose
 # from <plugin>/docker/.env). Only that one plugin is activated — no fleet
 # activation, no plugin-order.txt, no cross-plugin side effects.
@@ -21,7 +21,7 @@ echo "MySQL is ready."
 cd /var/www/html
 
 if [ ! -f /var/www/html/.elgg-installed ]; then
-    echo "Installing Elgg 5.x..."
+    echo "Installing Elgg 6.x..."
 
     mkdir -p elgg-config
     cat > elgg-config/settings.php <<'SETTINGS_TEMPLATE'
@@ -68,7 +68,7 @@ SETTINGS_VALUES
 
         \$installer = new \ElggInstaller();
         \$installer->batchInstall(\$params);
-        echo 'Elgg 5.x installed successfully.' . PHP_EOL;
+        echo 'Elgg 6.x installed successfully.' . PHP_EOL;
     " 2>&1 || echo "Install completed (check for errors above)."
 
     echo "Activating plugins..."
@@ -177,7 +177,7 @@ SETTINGS_VALUES
 
     chown -R www-data:www-data /var/www/data
     touch /var/www/html/.elgg-installed
-    echo "Elgg 5.x setup complete."
+    echo "Elgg 6.x setup complete."
 fi
 
 echo "Starting Apache..."

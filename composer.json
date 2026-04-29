@@ -19,7 +19,7 @@
 	],
 	"require": {
 		"php": ">=8.2",
-		"elgg/elgg": "^5.0",
+		"elgg/elgg": "^6.0",
 		"composer/installers": "^2.0"
 	},
 	"config": {
