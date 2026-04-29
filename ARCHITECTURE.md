@@ -1,4 +1,4 @@
-# ui_tabs — Architecture (Elgg 5.x)
+# ui_tabs — Architecture (Elgg 6.x)
 
 ## Summary
 
@@ -36,6 +36,20 @@ ui_tabs/
 ## Dependencies
 
 None — leaf plugin.
+
+## Migration Notes (5.x → 6.x)
+
+- `elgg/elgg` bumped to `^6.0`.
+- `components/tabs.js` converted from AMD `define(function(require){...})` to ES module
+  `import/export` syntax — Elgg 6.x drops RequireJS/AMD entirely.
+- `elgg_require_js('components/tabs')` replaced with `elgg_import_esm('components/tabs')`
+  in `components/tabs.php` — `elgg_require_js()` removed in Elgg 6.x.
+- `view_extensions` format reverted to nested array: `'base' => ['ext' => []]`.
+  Elgg 5.x used a flat string format; 6.x `registerViewExtensions()` expects nested array.
+  Using the flat string format in 6.x causes a PHP Warning which triggers `Plugins::init()`
+  auto-disable (removing the `active_plugin` relationship), breaking `getAllSettings()` via
+  the new `isActive()` guard added in 6.x.
+- Docker test stack: updated to Elgg 6.3.x (`elgg-composer.json`).
 
 ## Migration Notes (4.x → 5.x)
 

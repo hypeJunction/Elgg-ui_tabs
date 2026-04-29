@@ -1,4 +1,13 @@
-## [Unreleased] — Elgg 5.x migration
+## [Unreleased] — Elgg 6.x migration
+
+### Changed
+- Require `elgg/elgg ^6.0`
+- Convert `components/tabs.js` from AMD `define()` to ES module `import/export`
+- Replace `elgg_require_js()` with `elgg_import_esm()` in `components/tabs.php`
+- Fix `view_extensions` to Elgg 6.x nested-array format: `'base' => ['ext' => []]`
+- Docker test stack updated to Elgg 6.3.x
+
+## [Previous] — Elgg 5.x migration
 
 ### Changed
 - Require `elgg/elgg ^5.0` and `php >=8.2`
