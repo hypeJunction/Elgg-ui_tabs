@@ -21,17 +21,17 @@ $vars['class'] = $class;
 $ajax_tabs = elgg_extract('ajax_tabs', $vars, true);
 $tabs = elgg_format_element('div', [
 	'class' => $ajax_tabs ? 'elgg-tabs-nav' : false,
-		], elgg_extract('tabs', $vars, ''));
+], elgg_extract('tabs', $vars, ''));
 unset($vars['tabs']);
 
 $content = elgg_format_element('div', [
 	'class' => 'elgg-tabs-content',
-		], elgg_extract('content', $vars, ''));
+], elgg_extract('content', $vars, ''));
 unset($vars['content']);
 
 $module = elgg_extract('module', $vars);
 if ($module) {
-	$class = (array) elgg_extract('class', $vars, array());
+	$class = (array) elgg_extract('class', $vars, []);
 	$class[] = 'elgg-module-tabbed';
 	$vars['class'] = $class;
 	echo elgg_view_module($module, $tabs, $content, $vars);

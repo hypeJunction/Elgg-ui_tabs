@@ -43,6 +43,7 @@ $(document).on('click', '.elgg-tabs-nav a', function (e) {
 			$tab.siblings().addBack().removeClass('elgg-state-selected');
 			$tab.addClass('elgg-state-selected');
 		}
+
 		return;
 	}
 
@@ -90,6 +91,7 @@ $(document).on('click', '.elgg-tabs-nav a', function (e) {
 					$($target.data('titleSelector')).html($target.data('title'));
 				}
 			}
+
 			// if new content element has associated url
 			// replace browser url
 			if ($target.data('url')) {

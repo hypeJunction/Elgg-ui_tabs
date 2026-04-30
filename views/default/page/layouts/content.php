@@ -27,7 +27,7 @@ $filter = elgg_view('page/layouts/content/filter', $vars);
 if ($filter) {
 	$content = elgg_extract('content', $vars);
 	$vars['content'] = elgg_view_layout('tabs', [
-		'id' => $context ? "elgg-page-$context-nav" : "elgg-page-layout-nav",
+		'id' => $context ? "elgg-page-$context-nav" : 'elgg-page-layout-nav',
 		'tabs' => $filter,
 		'ajax_tabs' => elgg_extract('ajax_tabs', $vars, elgg_get_plugin_setting('ajax_page_tabs', 'ui_tabs', true)),
 		'content' => elgg_format_element('div', [
@@ -35,7 +35,7 @@ if ($filter) {
 			'data-title' => $vars['title'],
 			'data-title-selector' => '.elgg-heading-main',
 			'data-url' => current_page_url(),
-				], $content),
+		], $content),
 	]);
 }
 
