@@ -76,7 +76,12 @@ jobs:
               $r = $pdo->query("SHOW CREATE TABLE $t")->fetch(PDO::FETCH_ASSOC);
               $pdo->exec(str_replace($t, $new, $r["Create Table"]));
           }
+          // Seed config/state tables. Schema differs across Elgg versions:
+          // private_settings was merged into entity metadata in Elgg 6+,
+          // so only copy tables that actually exist on this stack.
+          $existing = array_flip($tables);
           foreach (["config","entities","metadata","private_settings","entity_relationships"] as $t) {
+              if (!isset($existing["elgg_$t"])) continue;
               $pdo->exec("INSERT INTO c_i_elgg_$t SELECT * FROM elgg_$t");
           }
           echo "Test tables ready." . PHP_EOL;
