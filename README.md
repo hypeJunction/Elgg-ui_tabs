@@ -1,6 +1,6 @@
 AJAX Tabs component for Elgg
 ============================
-![Elgg 2.0](https://img.shields.io/badge/Elgg-2.0.x-orange.svg?style=flat-square)
+![Elgg 6.x](https://img.shields.io/badge/Elgg-6.x-orange.svg?style=flat-square)
 
 ## Features
 
