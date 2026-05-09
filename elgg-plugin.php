@@ -4,7 +4,7 @@ return [
 	'plugin' => [
 		'id' => 'ui_tabs',
 		'name' => 'AJAX Tabs',
-		'version' => '1.3.0',
+		'version' => '1.4.0',
 		'description' => 'AJAX tab component for Elgg.',
 		'author' => 'Ismayil Khayredinov',
 		'category' => 'ui',
