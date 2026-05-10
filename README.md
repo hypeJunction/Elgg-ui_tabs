@@ -81,3 +81,9 @@ echo elgg_format_element('div', array(
     'data-title-selector' => '.elgg-heading-main,.my-module-title', // update text of these selectors
 ));
 ```
+
+## Compatibility
+
+| Plugin version | Elgg version |
+|---|---|
+| current | 6.x |
