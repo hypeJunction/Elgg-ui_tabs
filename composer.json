@@ -32,6 +32,5 @@
         "elgg-plugin": {
             "id": "ui_tabs"
         }
-    },
-    "version": "7.0.0"
+    }
 }
