@@ -4,7 +4,11 @@
 	"description": "AJAX Tabs component for Elgg",
 	"homepage": "http://hypejunction.com",
 	"keywords": [
-		"elgg", "plugin", "ui", "tabs", "ajax"
+		"elgg",
+		"plugin",
+		"ui",
+		"tabs",
+		"ajax"
 	],
 	"license": "GPL-2.0",
 	"authors": [
@@ -15,6 +19,9 @@
 	],
 	"require-dev": {
 		"composer/installers": "1.*"
+	},
+	"require": {
+		"php": ">=7.2",
+		"elgg/elgg": "^3.0"
 	}
 }
-
