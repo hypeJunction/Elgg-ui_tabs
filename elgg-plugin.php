@@ -5,7 +5,7 @@ return [
 		'id' => 'ui_tabs',
 		'name' => 'AJAX Tabs',
 		'version' => '1.4.0',
-		'description' => 'AJAX tab component for Elgg.',
+		'description' => 'AJAX Tabs component for Elgg',
 		'author' => 'Ismayil Khayredinov',
 		'category' => 'ui',
 	],
