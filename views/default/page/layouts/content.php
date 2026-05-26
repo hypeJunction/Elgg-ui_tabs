@@ -34,7 +34,7 @@ if ($filter) {
 			'class' => 'elgg-content',
 			'data-title' => $vars['title'],
 			'data-title-selector' => '.elgg-heading-main',
-			'data-url' => current_page_url(),
+			'data-url' => elgg_get_current_url(),
 				], $content),
 	]);
 }
