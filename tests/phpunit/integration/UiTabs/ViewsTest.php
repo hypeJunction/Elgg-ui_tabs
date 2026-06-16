@@ -71,7 +71,7 @@ class ViewsTest extends IntegrationTestCase {
      * @return void
      */
     public function testComponentsTabsJsFileExists(): void {
-        $this->assertTrue(elgg_view_exists('components/tabs.js'));
+        $this->assertTrue(elgg_view_exists('components/tabs.mjs'));
     }
 
     /**
