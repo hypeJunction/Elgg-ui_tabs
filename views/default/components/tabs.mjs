@@ -1,6 +1,6 @@
 import Ajax from 'elgg/Ajax';
 import $ from 'jquery';
-import 'jquery-ui/unique-id';
+import 'jquery-ui';
 import spinner from 'elgg/spinner';
 
 const ajax = new Ajax();
